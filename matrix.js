@@ -27,7 +27,19 @@ export class Matrix {
   }
 
   get columns() {
-    let matrix = [[1]];
+    const rows = this.rows;
+
+    let matrix = [];
+
+    for (let i = 0; i < rows[0].length; i++) {
+      let column = [];
+
+      rows.forEach((row) => {
+        column.push(row[i]);
+      });
+
+      matrix.push(column);
+    }
 
     return matrix;
   }
